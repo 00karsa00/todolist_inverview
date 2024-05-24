@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "e6da19a5-08ce-4538-960f-542d3ac8cf59",
+		"name": "interview Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10233839",
+		"_collection_link": "https://www.postman.com/bold-station-630909/workspace/karthick/collection/10233839-e6da19a5-08ce-4538-960f-542d3ac8cf59?action=share&source=collection_link&creator=10233839"
+	},
+	"item": [
+		{
+			"name": "register ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"karthick\", \r\n    \"email\": \"ka@gmail.com\", \r\n    \"password\": \"123\",\r\n    \"phone\":\"76875t8658\", \r\n    \"address\": \"address line 1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/664cf8524882590efc8c491c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"664cf8524882590efc8c491c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Update",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"karthick\", \r\n    \"email\": \"ka@gmail.com\", \r\n    \"password\": \"123\",\r\n    \"phone\":\"76875t8658\", \r\n    \"address\": \"address line 1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/664cf8524882590efc8c491c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"664cf8524882590efc8c491c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User List",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Todo ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjRkZDFlODAzMjAxMjVhOTQzY2E2MGQiLCJlbWFpbCI6ImthN0BnbWFpbC5jb20iLCJpYXQiOjE3MTY0NzAxMDh9.0lVHxaiMaY04u2mN0cEOUeMsOgHHtcmUbu3zfLParps",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"title\": \"Test data low\", \r\n   \"description\": \"test teate ets low\",\r\n   \"priority\": \"high\", \r\n   \"date\": \"2024-10-23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/todo/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"todo",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/users/664cf8524882590efc8c491c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"664cf8524882590efc8c491c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todo List ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjRkZDFlODAzMjAxMjVhOTQzY2E2MGQiLCJlbWFpbCI6ImthN0BnbWFpbC5jb20iLCJpYXQiOjE3MTY0NzAxMDh9.0lVHxaiMaY04u2mN0cEOUeMsOgHHtcmUbu3zfLParps",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"title\": \"Test data low\", \r\n   \"description\": \"test teate ets low\",\r\n   \"priority\": [\"low\"], \r\n   \"date\": {\r\n     \"to\": \"2024-04-01\",\r\n     \"from\": \"2024-04-01\"\r\n   },\r\n   \"page\":1,\r\n   \"limit\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/todo/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"todo",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todo Update",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjRkNjNhMjdiN2M4OWM0ODU1YzExM2YiLCJlbWFpbCI6ImthNUBnbWFpbC5jb20iLCJpYXQiOjE3MTYzNDc4NDF9.CTSAf7qJJ8D09VZKBBcJQm94VIt7JfP3ihot8XGsGwM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"title\": \"Test data\", \r\n   \"description\": \"test teate ets\",\r\n   \"priority\": \"low\", \r\n   \"date\": \"2024-10-23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/todo/664d65aba0f6c27c5cfeacfe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"todo",
+						"664d65aba0f6c27c5cfeacfe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todo Complated",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjRkNjNhMjdiN2M4OWM0ODU1YzExM2YiLCJlbWFpbCI6ImthNUBnbWFpbC5jb20iLCJpYXQiOjE3MTYzNDc4NDF9.CTSAf7qJJ8D09VZKBBcJQm94VIt7JfP3ihot8XGsGwM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"title\": \"Test data 1\", \r\n   \"description\": \"test teate ets 11\",\r\n   \"priority\": \"low\", \r\n   \"date\": \"2024-10-29\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/todo/complated/664dc707c9ad744f6df67a69",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"todo",
+						"complated",
+						"664dc707c9ad744f6df67a69"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todo Deleted",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjRkNjNhMjdiN2M4OWM0ODU1YzExM2YiLCJlbWFpbCI6ImthNUBnbWFpbC5jb20iLCJpYXQiOjE3MTYzNDc4NDF9.CTSAf7qJJ8D09VZKBBcJQm94VIt7JfP3ihot8XGsGwM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/todo/664dc707c9ad744f6df67a69",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"todo",
+						"664dc707c9ad744f6df67a69"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Todo Info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjRkZDFlODAzMjAxMjVhOTQzY2E2MGQiLCJlbWFpbCI6ImthN0BnbWFpbC5jb20iLCJpYXQiOjE3MTY0NzAxMDh9.0lVHxaiMaY04u2mN0cEOUeMsOgHHtcmUbu3zfLParps",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/todo/664dca3a51e67b74eb7bd1a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"todo",
+						"664dca3a51e67b74eb7bd1a1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
