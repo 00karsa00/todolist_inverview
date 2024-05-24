@@ -1,0 +1,55 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    # Uncomment the build step if you have a build script
+    # - name: Build project
+    #   run: npm run build --if-present
+
+    - name: Build Docker image todo-node-app
+      run: docker build -t ${{ secrets.DOCKER_USERNAME }}/todo-node-app:latest .
+
+    - name: Log in to Docker Hub
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+    - name: Push Docker image
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/todo-node-app:latest
+
+    - name: SSH and deploy Docker image to EC2
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USERNAME }}
+        key: ${{ secrets.EC2_SSH_KEY }}
+        script: |
+          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/todo-node-app:latest
+          sudo docker stop todo-node-app || true
+          sudo docker rm todo-node-app || true
+          sudo docker run -d -p 4002:4002 --name todo-node-app ${{ secrets.DOCKER_USERNAME }}/todo-node-app:latest
+
+
