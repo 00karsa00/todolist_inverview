@@ -20,6 +20,12 @@ app.use('/users', userRouter);
 
 app.use('/todo', taskRouter);
 
+app.get('/', (req, res) =>{
+  res.send("Welcome!! server is running")
+});
+
+
+
 // Fallback route for non-existing endpoints
 app.use('*', (req, res) => {
   return res.status(404).json({
